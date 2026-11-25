@@ -2,12 +2,13 @@
 
 ## 1. Architecture, Structure & Pragmatic Design
 - **Idiomatic Folder Structure:** Organize files and modules strictly according to the established conventions and best practices of the active language/framework (e.g., Clean Architecture, feature-based, or domain-driven layouts) to ensure long-term scalability and maintainability.
-- **SOLID & Design Patterns:** Apply SOLID principles and proven design patterns (Strategy, Factory, Decorator, Repository, etc.) where they genuinely clarify responsibilities and extensibility.
-- **No Over-Engineering:** Follow YAGNI and KISS. Do not introduce speculative abstractions, premature interfaces, or unnecessary layers for simple requirements; choose the cleanest, most readable solution that scales naturally.
+- **SOLID & Design Patterns:** Apply SOLID principles and proven design patterns (Strategy, Factory, Decorator, Repository, Adapter, etc.) where they genuinely clarify responsibilities and extensibility.
+- **No Over-Engineering:** Follow YAGNI and KISS. Do not introduce speculative abstractions or unnecessary layers for simple internal logic; choose the cleanest, most readable solution that scales naturally.
 - **Modular Granularity:** Keep files, classes, and functions focused on a single responsibility. Refactor or split bloated components before adding new behavior.
 
 ## 2. Dependency & Boundary Management
 - **Strict Dependency Direction:** Core business/domain logic must remain completely isolated from UI frameworks, ORMs, external SDKs, and infrastructure details.
+- **Third-Party Abstraction (Adapter/DIP):** Wrap replaceable third-party packages, SDKs, and external services behind clean, domain-owned interfaces so underlying libraries can be swapped in a single implementation without altering calling code.
 - **Clean Injection & Zero Cycles:** Use explicit Dependency Injection at architectural boundaries. Never introduce circular dependencies between modules, layers, or services.
 - **Third-Party Discipline:** Keep external dependencies minimal and justified. Never add a new package or library without explicit approval, and ensure compatibility with the project's existing stack.
 
