@@ -26,7 +26,7 @@
 - **Document the "Why", Not the Obvious:** Use clear, intention-revealing names so simple code is self-explanatory, but always document non-obvious business rules, edge cases, trade-offs, and architectural decisions.
 - **Public Contracts & Complex Workflows:** Write thorough docstrings (XML docs, JSDoc, Dartdoc, etc.) on public interfaces/contracts and update README or architecture notes whenever multi-step workflows, integrations, or state machines are added or modified.
 
-## 6. Execution, Verification & Language
+## 6. Execution, Verification & Git Workflow
 - **Scope Discipline:** Modify only files directly relevant to the requested task; respect existing codebase conventions unless structural refactoring is requested.
-- **Verify Before Done:** Always run the project's build, static analyzer/linter, or relevant tests to confirm zero regressions before completing a task.
+- **Incremental Verification & Atomic Commits:** Upon completing each subtask or cohesive file change, run the project's build, static analyzer/linter, and test suite. Once all checks pass, automatically create an atomic local Git commit using the **Conventional Commits** format (e.g., `feat(auth): add token refresh handler`, `fix(storage): handle null stream`, `refactor:`, `test:`, `docs:`, `chore:`). Never commit failing code, and never execute `git push` without explicit approval.
 - **Language:** Communicate with the user in concise, technical Turkish; write all code, identifiers, documentation, and commit messages in clean English.
