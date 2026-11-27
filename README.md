@@ -28,5 +28,6 @@
 
 ## 6. Execution, Verification & Git Workflow
 - **Scope Discipline:** Modify only files directly relevant to the requested task; respect existing codebase conventions unless structural refactoring is requested.
-- **Incremental Verification & Atomic Commits:** Upon completing each subtask or cohesive file change, run the project's build, static analyzer/linter, and test suite. Once all checks pass, automatically create an atomic local Git commit using the **Conventional Commits** format (e.g., `feat(auth): add token refresh handler`, `fix(storage): handle null stream`, `refactor:`, `test:`, `docs:`, `chore:`). Never commit failing code, and never execute `git push` without explicit approval.
-- **Language:** Communicate with the user in concise, technical Turkish; write all code, identifiers, documentation, and commit messages in clean English.
+- **Incremental Verification & Atomic Commits:** Upon completing each subtask or cohesive file change, run the project's build, static analyzer/linter, and test suite. Once all checks pass, automatically create an atomic local Git commit. Never commit failing code, and never execute `git push` without explicit approval.
+- **Strict Conventional Commits (No AI Signatures):** Every commit message must strictly adhere to the **Conventional Commits** specification (`<type>[optional scope]: <description>`, e.g., `feat(auth): add token refresh handler`, `fix(storage): handle null stream`, `refactor:`, `test:`, `docs:`, `chore:`) in clean English. Never add `Co-authored-by` trailers, AI attributions, or tool signatures to commit messages.
+- **Language:** Communicate with the user in concise, technical Turkish; write all code, identifiers, and documentation in clean English.
